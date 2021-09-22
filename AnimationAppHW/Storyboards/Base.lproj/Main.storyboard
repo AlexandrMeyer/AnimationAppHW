@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iQ-qK-854">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6iQ-qK-854" customClass="SpringView" customModule="Spring">
                                 <rect key="frame" x="82.5" y="94" width="249" height="158.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-pY-Ac2">
@@ -76,7 +76,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Run animation"/>
+                                <state key="normal" title="Run"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="10"/>
@@ -99,6 +99,7 @@
                     </view>
                     <connections>
                         <outlet property="animationButton" destination="oUb-x2-ZMl" id="F5k-tp-rCs"/>
+                        <outlet property="animationView" destination="6iQ-qK-854" id="rgL-d2-8lz"/>
                         <outlet property="curveLabel" destination="UcC-gb-Tjt" id="TF3-Pa-nqK"/>
                         <outlet property="delayLabel" destination="CQ4-d1-3Yx" id="zbV-I3-mZw"/>
                         <outlet property="durationLabel" destination="0Ib-dE-RNF" id="ynP-ai-1Vw"/>
