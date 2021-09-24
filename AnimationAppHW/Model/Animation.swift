@@ -12,23 +12,24 @@ struct Animation {
     let duration: Float
     let delay: Float
     
-    static func getAnimation() -> [Animation] {
-        var animations = [Animation]()
-
-        let preset = DataManager.shared.preset.shuffled()
-        let curve = DataManager.shared.curve.shuffled()
-        
-        for presetIndex in 0..<preset.count {
-            let animation = Animation(
-                preset: preset[presetIndex],
-                curve: curve[Int.random(in: 0..<curve.count)],
-                force: Float.random(in: 0.3...1.2),
-                duration: Float.random(in: 1...2),
-                delay: Float.random(in: 0.2...0.8)
-            )
-            animations.append(animation)
-        }
-        return animations
+    var description: String {
+        """
+        preset: \(preset)
+        curve: \(curve)
+        force: \(String(format: "%.02f", force))
+        duration: \(String(format: "%.02f", duration))
+        felay" \(String(format: "%.02f", delay))
+        """
+    }
+    
+    static func getAnimation() -> Animation {
+        Animation(
+            preset: DataManager.shared.presets.randomElement()?.rawValue ?? "pop",
+            curve: DataManager.shared.curves.randomElement()?.rawValue ?? "spring",
+            force: Float.random(in: 0.3...1.2),
+            duration: Float.random(in: 1...2),
+            delay: Float.random(in: 0.2...0.8)
+        )
     }
 }
 

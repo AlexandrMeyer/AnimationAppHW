@@ -5,23 +5,43 @@
 //  Created by Александр on 21.09.21.
 //
 
-import Foundation
+import Spring
 
 class DataManager {
     
     static let shared = DataManager()
-    private init() {}
     
-    let preset = [
-        "shake", "pop", "morph", "squeeze",
-        "wobble", "swing", "flipX", "flipY",
-        "fall", "squeezeLeft", "squeezeRight",
-        "squeezeDown", "squeezeUp", "slideLeft",
-        "slideRight", "slideDown", "slideUp",
-        "fadeIn", "fadeOut", "fadeInLeft",
-        "fadeInRight", "fadeInDown", "fadeInUp",
-        "zoomIn", "zoomOut", "flash"
+    let presets: [Spring.AnimationPreset] = [
+        .fadeIn,
+        .fadeInDown,
+        .fadeInLeft,
+        .fadeInRight,
+        .fadeInUp,
+        .fadeOut,
+        .fadeOutIn,
+        .fall,
+        .flash,
+        .flipX,
+        .flipY,
+        .morph,
+        .pop,
+        .shake,
+        .slideDown,
+        .slideLeft,
+        .slideRight,
+        .slideUp,
+        .squeeze,
+        .squeezeDown,
+        .squeezeLeft,
+        .squeezeRight,
+        .squeezeUp,
+        .swing,
+        .wobble,
+        .zoomIn,
+        .zoomOut
     ]
     
-    let curve = ["spring", "linear", "easeIn", "easeOut", "easeInOut"]
+    let curves = Spring.AnimationCurve.allCases
+    
+    private init() {}
 }
